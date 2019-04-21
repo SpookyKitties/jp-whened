@@ -1,4 +1,4 @@
-export function when(promises: Promise<any>[]) {
+export function jpWhen(promises: Promise<any>[]) {
   if (Promise.all) {
     return Promise.all(promises.map(p => p.catch(e => e)));
   } else {
