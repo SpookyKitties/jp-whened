@@ -17,7 +17,7 @@ test('EMCA Promises', () => {
 
   jpWhen(promises)
     .then(value => {
-      expect(value === undefined);
+      expect(value).toEqual([]);
     })
     .catch(reason => {
       fail(reason);
@@ -53,7 +53,7 @@ promisesTypes.forEach(promiseType => {
 
     jpWhen(promises)
       .then(value => {
-        expect(value === undefined);
+        expect(value).toEqual([]);
       })
       .catch(reason => {
         fail(reason);
@@ -69,36 +69,19 @@ promisesTypes.forEach(promiseType => {
       }),
       new Promise(reject => {
         setTimeout(() => {
-          reject();
-        }, 300);
-      }),
-    ];
-    const promises2 = [
-      new Promise(resolve => {
-        setTimeout(() => {
-          resolve({ id: 1 });
-        }, 300);
-      }),
-      new Promise(reject => {
-        setTimeout(() => {
-          reject();
+          reject({ id: 2 });
         }, 300);
       }),
     ];
 
-    jpWhen(promises2)
+    jpWhen(promises)
       .then(value => {
-        value.forEach(v => {
-          console.log(v);
-        });
-        // expect(value.length === 2);
-        jpWhen(promises)
-          .then(value => {
-            expect(value.length === 2);
-          })
-          .catch(reason => {
-            fail(reason);
-          });
+        // value.forEach(v => {
+        //   console.log(v);
+        // });
+        // console.log(value.length);
+
+        expect(value.length).toBe(2);
       })
       .catch(reason => {
         fail(reason);
