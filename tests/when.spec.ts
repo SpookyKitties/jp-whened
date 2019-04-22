@@ -5,12 +5,12 @@ test('EMCA Promises', () => {
     new Promise(resolve => {
       setTimeout(() => {
         resolve();
-      }, 300);
+      }, 0);
     }),
     new Promise(reject => {
       setTimeout(() => {
         reject();
-      }, 300);
+      }, 0);
     }),
   ];
   //   console.log(promises);
@@ -42,12 +42,12 @@ promisesTypes.forEach(promiseType => {
       new Promise(resolve => {
         setTimeout(() => {
           resolve();
-        }, 300);
+        }, 0);
       }),
       new Promise(reject => {
         setTimeout(() => {
           reject();
-        }, 300);
+        }, 0);
       }),
     ];
 
@@ -65,12 +65,12 @@ promisesTypes.forEach(promiseType => {
       new Promise(resolve => {
         setTimeout(() => {
           resolve({ id: 1 });
-        }, 300);
+        }, 0);
       }),
       new Promise(reject => {
         setTimeout(() => {
           reject({ id: 2 });
-        }, 300);
+        }, 0);
       }),
     ];
 
