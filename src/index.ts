@@ -1,1 +1,1 @@
-export { jpWhen } from './when.js';
+export { jpWhen } from './when';

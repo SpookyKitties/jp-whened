@@ -31,7 +31,7 @@ build/
 
 *.exe
 
-build
-dist
+*.tsbuildinfo
+
 log.json
 log.txt
